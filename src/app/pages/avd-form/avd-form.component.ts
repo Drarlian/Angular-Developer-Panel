@@ -26,5 +26,29 @@ export class AvdFormComponent {
   value3: number = 0;
   value4: number = 0;
   value5: string = '';
+  value6: number = 0;
+
+  selectedCategory3: any = null;
+  selectedCategory4: any = null;
+  selectedCategory5: any = null;
+  selectedCategory6: any = null;
+  selectedCategory7: any = null;
+
+  categories: any[] = [
+    { name: '1', key: 'one' },
+    { name: '2', key: 'two' },
+    { name: '3', key: 'three' },
+    { name: '4', key: 'four' },
+    { name: '5', key: 'five' },
+    { name: '6', key: 'six' },
+    { name: '7', key: 'seven' },
+    { name: '8', key: 'eight' },
+    { name: '9', key: 'nine' },
+    { name: '10', key: 'ten' },
+  ];
+
+  ngOnInit() {
+    // this.selectedCategory = this.categories[1];
+  }
 
 }

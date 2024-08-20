@@ -4,15 +4,63 @@
 
   <div class="card">
     <div class="card__content">
-      <h2 class="card__title">Pergunta 1</h2>
-      <p class="card__question ">Se você pudesse definir um nível de satisfação para seu ambiente de trabalho, qual seria?</p>
+      <h2 class="card__title">Valores</h2>
 
-      <div class="card__buttons">
-
-        <div class="select flex gap-4 justify-content-center align-items-center">
-        {{value}}  <p-slider max="10" [(ngModel)]="value" class="w-full" /> 10
+      <div class="flex flex-column justify-content-center align-items-center">
+        <p class="card__question ">Qual a nota você da para o seu valor Ambição?</p>
+        <div class="card__buttons">
+          <div class="select flex gap-4 justify-content-center align-items-center">
+            {{value}}  <p-slider max="10" [(ngModel)]="value" class="w-full" /> 10
+          </div>
+        </div>
       </div>
 
+      <div class="flex flex-column justify-content-center align-items-center">
+        <p class="card__question ">Qual a nota você da para o seu valor Atitude?</p>
+        <div class="card__buttons">
+          <div class="select flex gap-4 justify-content-center align-items-center">
+            {{value6}}  <p-slider max="10" [(ngModel)]="value6" class="w-full" /> 10
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-column justify-content-center align-items-center gap-4">
+        <label for="h2" class="teste">
+          Qual a nota você da para o seu valor Versatilidade?
+        </label
+        >
+        <div class="pt-3 flex justify-content-center gap-3 w-full">
+          <div *ngFor="let category of categories; let i = index" class="field-checkbox">
+            <p-radioButton
+            [inputId]="'category-' + i"
+              name="category"
+              [value]="category"
+              [(ngModel)]="selectedCategory"
+            />
+            <label [for]="'category-' + i" class="ml-2">
+              {{ category.name }}
+            </label>
+          </div>
+        </div>
+      </div>
+     
+      <div class="flex flex-column justify-content-center align-items-center gap-4">
+        <label for="h2" class="teste">
+          Qual a nota você da para o seu valor Resiliência?
+        </label>
+        <div class="pt-3 flex justify-content-center gap-3 w-full">
+          <div *ngFor="let category1 of categories; let i = index" class="field-checkbox">
+            <p-radioButton
+              [inputId]="'category1-' + i"
+              name="category1"
+              [value]="category1"
+              [(ngModel)]="selectedCategory1"
+            />
+            <label [for]="'category1-' + i" class="ml-2">
+              {{ category1.name }}
+            </label>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -22,7 +70,7 @@
   <div class="card">
     <div class="card__content">
       <h2 class="card__title">Pergunta 2</h2>
-      <p class="card__question ">O quão puxada você diria que é sua rotina de trabalho?</p>
+      <p class="card__question ">Qual a nota você da para o seu valor Empatia?</p>
 
       <div class="card__buttons">
 
@@ -39,7 +87,7 @@
   <div class="card">
     <div class="card__content">
       <h2 class="card__title">Pergunta 3</h2>
-      <p class="card__question ">Qual sua avaliação para a estrtura fornecida no escritorio?</p>
+      <p class="card__question ">Qual a nota você da para o seu valor Colaboração?</p>
 
       <div class="card__buttons">
 
@@ -55,34 +103,41 @@
   <div class="card">
     <div class="card__content">
       <h2 class="card__title">Pergunta 4</h2>
-      <p class="card__question ">Qual sua satisfação com as bonificações fornecidas?</p>
 
-      <div class="card__buttons">
-
-        <p-rating stars="10" [(ngModel)]="value4" [cancel]="false" /> {{value4}}
-
+      <div class="flex flex-column justify-content-center align-items-center gap-4">
+        <label for="h2" class="teste">
+          Qual a nota você da para o seu valor Simplicidade?
+        </label>
+        <div class="pt-3 flex justify-content-center gap-3 w-full">
+          <div *ngFor="let category3 of categories; let i = index" class="field-checkbox">
+            <p-radioButton
+              [inputId]="'category3-' + i"
+              name="category1"
+              [value]="category3"
+              [(ngModel)]="selectedCategory3"
+            />
+            <label [for]="'category3-' + i" class="ml-2">
+              {{ category3.name }}
+            </label>
+          </div>
+        </div>
       </div>
 
     </div>
-
-
   </div>
 
   <div class="card">
     <div class="card__content">
       <h2 class="card__title">Pergunta 5 - Discursiva</h2>
-      <p class="card__question ">Escreva com as suas palavras como é seu relacionamento com seu superior.</p>
-
+      <p class="card__question ">Descreva os projetos realizados por você recentemente.</p>
       <textarea
-      class="w-10 shadow-2"
-      rows="10"
-      cols="30"
-      [autoResize]="true"
-      pInputTextarea
-      [(ngModel)]="value5">
-    </textarea>
-
-
+        class="w-10 shadow-2"
+        rows="10"
+        cols="30"
+        [autoResize]="true"
+        pInputTextarea
+        [(ngModel)]="value5">
+      </textarea>
     </div>
 
   </div>
