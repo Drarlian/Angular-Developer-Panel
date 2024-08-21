@@ -119,9 +119,13 @@ export class OrgTechComponent implements OnInit {
   }
 
   private applyStatus(node: TreeNode): void {
+    const temporario = true;
+
     if (node.data && node.data.evaluationStatus) {
       node.styleClass = 'bg-green-200';
-    } else {
+    } else if (node.data.role == 'gerente' && temporario){
+      node.styleClass = 'bg-white-200';
+    } else{
       node.styleClass = 'bg-yellow-200';
     }
   }
